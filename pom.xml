@@ -10,7 +10,7 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <name>aspice-demo</name>
-    <description>Spring Boot sample for an ASPICE-oriented CI hackathon</description>
+    <description>Spring Boot sample for an ASPICE-oriented CI hackathon changes</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
