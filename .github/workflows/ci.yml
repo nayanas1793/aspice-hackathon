@@ -3,9 +3,9 @@ name: Spring Boot ASPICE CI Pipeline
 
 on:
   push:
-    branches: [main, develop, 'feature/**', 'codex/**']
+    branches: [master, develop, 'feature/**', 'codex/**']
   pull_request:
-    branches: [main]
+    branches: [master]
     types: [opened, synchronize, reopened, edited]
   workflow_dispatch:
 
@@ -595,8 +595,8 @@ jobs:
 
     if: >-
       ${{ !cancelled() && needs.aspice-report.result == 'success' &&
-          ((github.event_name == 'push' && github.ref == 'refs/heads/main') ||
-           (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')) }}
+          ((github.event_name == 'push' && github.ref == 'refs/heads/master') ||
+           (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/master')) }}
 
     permissions:
       pages: write
