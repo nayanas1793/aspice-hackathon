@@ -37,7 +37,7 @@ jobs:
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
           JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
-          JIRA_PROJECT_KEY: KAN
+          JIRA_PROJECT_KEY: SCRUM
         run: |
           set -euo pipefail
 
@@ -50,7 +50,7 @@ jobs:
           mapfile -t issue_keys < <(printf '%s' "$text" | grep -oE "${JIRA_PROJECT_KEY}-[0-9]+" | sort -u || true)
 
           if [ "${#issue_keys[@]}" -eq 0 ]; then
-            echo "::error::Add a Jira requirement key (for example KAN-1) to the pull request title or description."
+            echo "::error::Add a Jira requirement key (for example SCRUM-6) to the pull request title or description."
             exit 1
           fi
 
